@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript Events</title>
+  </head>
+  <body>
+    <button id="mybtn">Click me to see the date</button>
+    <p id="demo"></p>
+    <!-- <input type="number" name="" value="50" id="" /> -->
+    <p id="text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum fugit
+      laboriosam eos id odio unde doloribus. Vero delectus soluta nobis fuga
+      eaque, eveniet deleniti maiores consectetur culpa recusandae repellendus
+      eum?
+    </p>
+
+    <img src="closedbox.png" id="box" alt="" />
+    <br />
+    <button id="open">Open Box</button>
+    <button id="close">close Box</button>
+    <script>
+      // Open Box and Closed Box
+      document.getElementById("open").addEventListener("click", openBox);
+      function openBox() {
+        document.getElementById("box").src = "boxopen.png";
+      }
+
+      document.getElementById("close").addEventListener("click", closeBox);
+      function closeBox() {
+        document.getElementById("box").src = "closedbox.png";
+      }
+
+      // Copy JS DOM
+      document.getElementById("text").addEventListener("copy", response);
+      function response() {
+        document.getElementById("demo").innerHTML = "Copied successfully";
+      }
+
+      // Date Function with Event
+      function datefunc() {
+        document.getElementById("demo").innerHTML = Date();
+      }
+      var button = document.getElementById("mybtn");
+      button.addEventListener("click", datefunc);
+    </script>
+  </body>
+</html>
